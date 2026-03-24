@@ -116,12 +116,11 @@ int main(void)
   }
 
 
-
-
+  // ----- DMA -----
   //HAL_GPIO_WritePin(TEST_GPIO_Port, TEST_Pin, GPIO_PIN_SET);	// Inicio de copia - Osciloscopio
   // ----------- CAMBIAR src_flash - src_sram	-----------
   //HAL_DMA_Start_IT(&hdma_memtomem_dma1_channel1, (uint32_t) src_sram,(uint32_t) dst, N);
-
+  // ----- DMA -----
 
   /* USER CODE END 2 */
 
@@ -137,8 +136,7 @@ int main(void)
 
 
 	  // ----------- CAMBIAR src_flash - src_sram	-----------
-
-	  // ----------- COPIA MEMCPY	-----------
+	  // ----------- CPU -----------
 
 	  HAL_GPIO_WritePin(TEST_GPIO_Port, TEST_Pin, GPIO_PIN_SET);
 
@@ -172,6 +170,7 @@ int main(void)
 	  }
 
 	  HAL_Delay(1000);
+	  // ----------- CPU -----------
 
 
 
@@ -211,6 +210,7 @@ int main(void)
 		  // ----------- CAMBIAR src_flash - src_sram	-----------
 		  HAL_DMA_Start_IT(&hdma_memtomem_dma1_channel1, (uint32_t)src_sram, (uint32_t)dst, N);
 	  }
+	  // ----- DMA -----
 	  */
 
 
